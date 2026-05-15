@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T001 Briefs — GrowthPod Self-Promo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0D0D0D;
+    --bg-secondary: #141414;
+    --bg-card: #1a1a1a;
+    --bg-card-hover: #1f1f1f;
+    --text-primary: #F5F5F5;
+    --text-secondary: #8C8C8C;
+    --text-muted: #666666;
+    --accent: #A6EE2B;
+    --accent-dim: rgba(166, 238, 43, 0.1);
+    --accent-mid: rgba(166, 238, 43, 0.2);
+    --red-muted: #ff6b6b;
+    --red-dim: rgba(255, 107, 107, 0.1);
+    --border: rgba(255, 255, 255, 0.06);
+    --border-accent: rgba(166, 238, 43, 0.3);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-pill: 9999px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Header ── */
+  .page-header {
+    padding: 48px 0 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(166,238,43,0.03) 0%, transparent 100%);
+  }
+  .page-header .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .page-header .logo span { color: var(--accent); }
+  .page-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1.2px;
+    margin-bottom: 8px;
+  }
+  .page-header h1 em {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .page-header .subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+  .page-header .subtitle strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  /* ── Nav tabs ── */
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13,13,13,0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+  .nav-tab {
+    flex: 1;
+    text-align: center;
+    padding: 14px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .nav-tab:hover { color: var(--text-primary); }
+  .nav-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .nav-tab .tab-label { display: block; font-size: 13px; font-weight: 600; }
+  .nav-tab .tab-sub { display: block; font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  /* ── Container ── */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── Brief card ── */
+  .brief {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .brief.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .brief-header {
+    margin-bottom: 32px;
+  }
+  .brief-header .slug {
+    font-size: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .brief-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    margin-bottom: 6px;
+  }
+  .brief-header h2 em {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .format-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(166,238,43,0.15);
+  }
+
+  /* ── Sections ── */
+  .section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+
+  /* ── References ── */
+  .ref-group { margin-bottom: 16px; }
+  .ref-group:last-child { margin-bottom: 0; }
+  .ref-group .ref-cat {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .ref-group ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .ref-group > ul > li {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    padding-left: 16px;
+    position: relative;
+  }
+  .ref-group > ul > li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--text-muted);
+  }
+  .ref-group ul ul {
+    padding-left: 16px;
+    margin-top: 4px;
+  }
+  .ref-group ul ul li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+    padding-left: 12px;
+    position: relative;
+  }
+  .ref-group ul ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 1px;
+    background: var(--text-muted);
+  }
+
+  /* ── Image Direction ── */
+  .image-direction {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    border-left: 3px solid var(--accent);
+  }
+  .image-direction p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .image-direction p:last-child { margin-bottom: 0; }
+  .image-direction strong { color: var(--accent); font-weight: 600; }
+  .image-direction .compliance {
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    margin-top: 12px;
+  }
+
+  /* ── Designer Note ── */
+  .designer-note {
+    background: rgba(166,238,43,0.04);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    border: 1px solid rgba(166,238,43,0.1);
+  }
+  .designer-note ul {
+    list-style: none;
+    padding: 0;
+  }
+  .designer-note li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .designer-note li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  /* ── Headlines ── */
+  .headline-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+  .headline-card:hover {
+    border-color: var(--border-accent);
+  }
+  .headline-card:last-child { margin-bottom: 0; }
+  .headline-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .headline-var {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--bg-primary);
+    background: var(--accent);
+    padding: 2px 8px;
+    border-radius: var(--radius-pill);
+    letter-spacing: 0.3px;
+  }
+  .headline-type {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  .headline-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+    color: var(--text-primary);
+  }
+
+  /* ── Design Elements ── */
+  .element-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .element-row:last-child { border-bottom: none; }
+  .element-label {
+    font-weight: 600;
+    color: var(--accent);
+    min-width: 130px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .element-value {
+    color: var(--text-primary);
+  }
+
+  /* ── Comparison table ── */
+  .comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .comparison-table th {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .comparison-table th.them-header {
+    background: rgba(255,255,255,0.03);
+    color: var(--text-muted);
+    width: 50%;
+  }
+  .comparison-table th.us-header {
+    background: var(--accent-dim);
+    color: var(--accent);
+    width: 50%;
+  }
+  .comparison-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .comparison-table .them-cell {
+    background: rgba(255,255,255,0.02);
+    color: var(--text-muted);
+  }
+  .comparison-table .them-cell::before {
+    content: '✕ ';
+    color: var(--red-muted);
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  .comparison-table .us-cell {
+    background: var(--accent-dim);
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .comparison-table .us-cell::before {
+    content: '✓ ';
+    color: var(--accent);
+    font-size: 12px;
+  }
+
+  /* Stack comparison with labels */
+  .comparison-table th.attr-header {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    width: 25%;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .comparison-table td.attr-cell {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  .comparison-table th.them-header-stack { width: 37.5%; }
+  .comparison-table th.us-header-stack { width: 37.5%; }
+
+  /* ── Feature pills ── */
+  .pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .pill {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 5px 14px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(166,238,43,0.12);
+  }
+
+  /* ── CTA ── */
+  .cta-display {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bg-primary);
+    background: var(--accent);
+    padding: 10px 32px;
+    border-radius: var(--radius-pill);
+    margin-top: 12px;
+  }
+
+  /* ── Primary Text ── */
+  .primary-text {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    padding: 24px;
+    border: 1px solid var(--border);
+  }
+  .primary-text p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+  }
+  .primary-text p:last-child { margin-bottom: 0; }
+  .primary-text p:first-child {
+    font-weight: 500;
+  }
+  .primary-text p:last-child {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* ── Diagram ── */
+  .diagram-wrap {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+  }
+  .diagram-wrap h3 { margin-bottom: 16px; }
+
+  /* ── Ad mockup preview ── */
+  .ad-mockup {
+    width: 270px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  /* Mockup: Us vs Them split */
+  .mockup-split {
+    display: flex;
+    height: 480px;
+  }
+  .mockup-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 12px;
+    gap: 10px;
+  }
+  .mockup-side.them {
+    background: #1a1a1a;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .mockup-side.us {
+    background: var(--bg-primary);
+  }
+  .mockup-col-header {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .them .mockup-col-header { color: var(--text-muted); }
+  .us .mockup-col-header { color: var(--accent); }
+  .mockup-row {
+    font-size: 10px;
+    line-height: 1.4;
+    padding: 4px 0;
+  }
+  .them .mockup-row { color: #555; }
+  .us .mockup-row { color: var(--text-primary); font-weight: 500; }
+  .mockup-headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    padding: 16px 16px 0;
+    line-height: 1.3;
+  }
+  .mockup-subhead {
+    font-size: 9px;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 4px 16px;
+  }
+  .mockup-cta {
+    display: block;
+    width: fit-content;
+    margin: 8px auto 16px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--bg-primary);
+    background: var(--accent);
+    padding: 6px 20px;
+    border-radius: var(--radius-pill);
+  }
+  .mockup-logo {
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    color: var(--text-muted);
+    padding-bottom: 12px;
+  }
+
+  /* Mockup: Stack */
+  .mockup-stack {
+    padding: 0;
+  }
+  .mockup-stack-rows {
+    padding: 0 12px;
+  }
+  .mockup-stack-row {
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding: 8px 0;
+    gap: 4px;
+  }
+  .mockup-stack-row:last-child { border-bottom: none; }
+  .mockup-attr {
+    width: 30%;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: var(--text-muted);
+    padding-top: 2px;
+  }
+  .mockup-them-val {
+    width: 35%;
+    font-size: 9px;
+    color: #555;
+  }
+  .mockup-us-val {
+    width: 35%;
+    font-size: 9px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* Mockup: Typography only */
+  .mockup-typo {
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 20px;
+    text-align: center;
+    gap: 16px;
+  }
+  .mockup-typo-headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    color: var(--text-primary);
+  }
+  .mockup-typo-headline em {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .mockup-typo-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .mockup-typo-pill {
+    font-size: 8px;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+  }
+
+  /* ── Scoring badge ── */
+  .scoring-strip {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .score-chip {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid rgba(166,238,43,0.12);
+  }
+  .score-chip .dim { font-weight: 400; color: var(--text-secondary); margin-right: 4px; }
+
+  /* ── Section divider ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+  }
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .section-divider span {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .page-header h1 { font-size: 26px; }
+    .container { padding: 24px 16px 60px; }
+    .section { padding: 20px; }
+    .headline-text { font-size: 18px; }
+    .element-row { flex-direction: column; gap: 4px; }
+    .element-label { min-width: auto; }
+    .ad-mockup { width: 240px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="logo">growthpod <span>&#127793;</span></div>
+  <h1>T001 Briefs &mdash; <em>Us vs. Them</em></h1>
+  <p class="subtitle"><strong>Self-Promo Campaign</strong> &middot; 3 briefs &middot; All scored 90+ &middot; 2026-05-15</p>
+</header>
+
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <div class="nav-tab active" onclick="showBrief(0)">
+      <span class="tab-label">Ad #1</span>
+      <span class="tab-sub">Us vs. Them &mdash; Split</span>
+    </div>
+    <div class="nav-tab" onclick="showBrief(1)">
+      <span class="tab-label">Ad #2</span>
+      <span class="tab-sub">Us First, Then Them</span>
+    </div>
+    <div class="nav-tab" onclick="showBrief(2)">
+      <span class="tab-label">Ad #3</span>
+      <span class="tab-sub">Us Only &mdash; Typo</span>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- ════════════════ AD #1 ════════════════ -->
+  <div class="brief active" id="brief-0">
+    <div class="brief-header">
+      <div class="slug">GrowthPod_UsVsThem_01_T001</div>
+      <h2>Ad #1 &mdash; Us vs. <em>Them</em></h2>
+      <span class="format-badge">Us vs Them &middot; Side-by-side Split</span>
+    </div>
+
+    <!-- Mockup -->
+    <div class="section" style="display:flex;justify-content:center;padding:40px 28px;">
+      <div class="ad-mockup">
+        <div class="mockup-headline">Your Ads Look Like Everyone Else's.</div>
+        <div class="mockup-subhead">GrowthPod. Creative that stops the scroll.</div>
+        <div class="mockup-split">
+          <div class="mockup-side them">
+            <div class="mockup-col-header">Typical Agency</div>
+            <div class="mockup-row">Stock photos</div>
+            <div class="mockup-row">Template headlines</div>
+            <div class="mockup-row">Creative fatigues in days</div>
+            <div class="mockup-row">Forgettable</div>
+          </div>
+          <div class="mockup-side us">
+            <div class="mockup-col-header">GrowthPod</div>
+            <div class="mockup-row">Concept-driven visuals</div>
+            <div class="mockup-row">Scroll-stopping hooks</div>
+            <div class="mockup-row">Concepts built to scale</div>
+            <div class="mockup-row">Screenshot-worthy</div>
+          </div>
+        </div>
+        <div class="mockup-cta">Book a Call</div>
+        <div class="mockup-logo">growthpod &#127793;</div>
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div class="section-divider"><span>Notes</span></div>
+
+    <div class="section">
+      <div class="section-label">References</div>
+      <div class="ref-group">
+        <div class="ref-cat">Layout</div>
+        <ul>
+          <li>Us vs Them, Style A: Side-by-side split
+            <ul>
+              <li>Vertical split at center, competitor side desaturated, brand side full color</li>
+              <li>Clean architectural split line, no gimmicky divider</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="ref-group">
+        <div class="ref-cat">Material</div>
+        <ul>
+          <li>GrowthPod portfolio pieces (growthpod.ca)
+            <ul>
+              <li>Pull the boldest, most concept-driven static from the portfolio section</li>
+              <li>Use as the "Us" side product representation</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Image Direction</div>
+      <div class="image-direction">
+        <p><strong>Image to generate:</strong> A miniature static ad on the "Us" (right) side showing a bold, concept-driven GrowthPod portfolio piece with high-contrast visuals and lime-green accents. The "Them" (left) side shows a generic, lifeless ad mockup with a stock photo of a smiling person holding a product, a bland "Premium Quality" headline, and a basic logo.</p>
+        <div class="compliance">Compliance: Do not name or reference any specific competitor agency. The "Them" side must represent generic creative, not a real brand's work.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Designer Note</div>
+      <div class="designer-note">
+        <ul>
+          <li>The visual contrast between left and right should be immediate at scroll speed. Left side fully desaturated and muted. Right side vibrant with full GrowthPod brand palette.</li>
+          <li>Comparison rows should be easy to scan vertically. Each row's text must be readable at phone scale.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BRIEF -->
+    <div class="section-divider"><span>Brief</span></div>
+
+    <div class="section">
+      <div class="section-label">Headline Variations</div>
+      <div class="headline-card">
+        <div class="headline-meta">
+          <span class="headline-var">A</span>
+          <span class="headline-type">Provocation, Straight</span>
+        </div>
+        <div class="headline-text">Your Ads Look Like Everyone Else's.</div>
+      </div>
+      <div class="headline-card">
+        <div class="headline-meta">
+          <span class="headline-var">B</span>
+          <span class="headline-type">Conversational Question, Straight</span>
+        </div>
+        <div class="headline-text">Still Running the Same Ad Template?</div>
+      </div>
+      <div class="headline-card">
+        <div class="headline-meta">
+          <span class="headline-var">C</span>
+          <span class="headline-type">Conditional, Straight</span>
+        </div>
+        <div class="headline-text">When Every Ad Looks the Same, Yours Disappears.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Design Elements</div>
+      <div class="element-row">
+        <div class="element-label">Column headers</div>
+        <div class="element-value">"Typical Agency" / "GrowthPod"</div>
+      </div>
+      <div class="element-row">
+        <div class="element-label">Subheading</div>
+        <div class="element-value">"GrowthPod. Creative that stops the scroll."</div>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th class="them-header">Typical Agency</th>
+            <th class="us-header">GrowthPod</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="them-cell">Stock photos</td>
+            <td class="us-cell">Concept-driven visuals</td>
+          </tr>
+          <tr>
+            <td class="them-cell">Template headlines</td>
+            <td class="us-cell">Scroll-stopping hooks</td>
+          </tr>
+          <tr>
+            <td class="them-cell">Creative fatigues in days</td>
+            <td class="us-cell">Concepts built to scale</td>
+          </tr>
+          <tr>
+            <td class="them-cell">Forgettable</td>
+            <td class="us-cell">Screenshot-worthy</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="element-row">
+        <div class="element-label">CTA</div>
+        <div class="element-value"><span class="cta-display">Book a Call</span></div>
+      </div>
+
+      <div class="scoring-strip">
+        <span class="score-chip"><span class="dim">Persona</span>92</span>
+        <span class="score-chip"><span class="dim">Awareness</span>92</span>
+        <span class="score-chip"><span class="dim">Angle</span>91</span>
+        <span class="score-chip"><span class="dim">Selves</span>91</span>
+        <span class="score-chip"><span class="dim">Compliance</span>92</span>
+        <span class="score-chip"><span class="dim">Format</span>93</span>
+        <span class="score-chip"><span class="dim">Editor</span>95</span>
+      </div>
+    </div>
+
+    <!-- MEDIA BUYING -->
+    <div class="section-divider"><span>Media Buying</span></div>
+
+    <div class="section">
+      <div class="section-label">Primary Text</div>
+      <div class="primary-text">
+        <p>Your creative is the bottleneck. It's not the funnel, the targeting, or the product.</p>
+        <p>You've tested new audiences, adjusted bids, swapped landing pages. Performance keeps declining because every ad in your account looks like every other ad in the feed.</p>
+        <p>Stock photo. Generic headline. Basic layout. Your customers scroll past it in a fraction of a second.</p>
+        <p>GrowthPod builds static ads that force people to stop. Bold concepts, unexpected visuals, and copy rooted in how your customers actually talk. Not another template.</p>
+        <p>Book a call and see the difference.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ AD #2 ════════════════ -->
+  <div class="brief" id="brief-1">
+    <div class="brief-header">
+      <div class="slug">GrowthPod_UsFirstThenThem_02_T001</div>
+      <h2>Ad #2 &mdash; Us First, <em>Then Them</em></h2>
+      <span class="format-badge">Us vs Them &middot; Stack Comparison</span>
+    </div>
+
+    <!-- Mockup -->
+    <div class="section" style="display:flex;justify-content:center;padding:40px 28px;">
+      <div class="ad-mockup">
+        <div class="mockup-headline" style="font-size:12px; padding: 16px 12px 0;">Your Funnel Works Fine. Your Creative Is Bleeding Money.</div>
+        <div class="mockup-subhead">GrowthPod. Performance creative for brands ready to scale.</div>
+        <div class="mockup-stack" style="padding:12px;">
+          <div class="mockup-stack-rows">
+            <div class="mockup-stack-row">
+              <div class="mockup-attr">Creative</div>
+              <div class="mockup-them-val">Stock photo + headline</div>
+              <div class="mockup-us-val">Concept-driven strategy</div>
+            </div>
+            <div class="mockup-stack-row">
+              <div class="mockup-attr">Copy</div>
+              <div class="mockup-them-val">AI-generated filler</div>
+              <div class="mockup-us-val">Customer language that converts</div>
+            </div>
+            <div class="mockup-stack-row">
+              <div class="mockup-attr">Lifespan</div>
+              <div class="mockup-them-val">Fatigues in days</div>
+              <div class="mockup-us-val">Built to scale for weeks</div>
+            </div>
+            <div class="mockup-stack-row">
+              <div class="mockup-attr">Results</div>
+              <div class="mockup-them-val">Declining ROAS</div>
+              <div class="mockup-us-val">Profitable, repeatable growth</div>
+            </div>
+          </div>
+        </div>
+        <div class="mockup-cta">Book a Call</div>
+        <div class="mockup-logo">growthpod &#127793;</div>
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div class="section-divider"><span>Notes</span></div>
+
+    <div class="section">
+      <div class="section-label">References</div>
+      <div class="ref-group">
+        <div class="ref-cat">Layout</div>
+        <ul>
+          <li>Us vs Them, Style B: Stack comparison
+            <ul>
+              <li>Full-width rows, brand values highlighted with accent color</li>
+              <li>Competitor values visually suppressed with muted treatment</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="ref-group">
+        <div class="ref-cat">Material</div>
+        <ul>
+          <li>GrowthPod portfolio pieces (growthpod.ca)
+            <ul>
+              <li>Featured prominently at top of composition before comparison rows begin</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Image Direction</div>
+      <div class="image-direction">
+        <p><strong>Image to generate:</strong> A prominent GrowthPod portfolio static ad displayed at the top of the composition, vibrant and bold with lime-green accents on near-black. Below it, a smaller generic ad mockup shown muted and desaturated as the contrast point.</p>
+        <div class="compliance">Compliance: Do not name or reference any specific competitor agency. Generic ad mockup must not resemble any real brand's creative.</div>
+      </div>
+    </div>
+
+    <!-- BRIEF -->
+    <div class="section-divider"><span>Brief</span></div>
+
+    <div class="section">
+      <div class="section-label">Headline Variations</div>
+      <div class="headline-card">
+        <div class="headline-meta">
+          <span class="headline-var">A</span>
+          <span class="headline-type">Reframe, Straight</span>
+        </div>
+        <div class="headline-text">Your Funnel Works Fine. Your Creative Is Bleeding Money.</div>
+      </div>
+      <div class="headline-card">
+        <div class="headline-meta">
+          <span class="headline-var">B</span>
+          <span class="headline-type">Confrontational Command, Straight</span>
+        </div>
+        <div class="headline-text">Stop Testing Audiences. Start Testing Better Creative.</div>
+      </div>
+      <div class="headline-card">
+        <div class="headline-meta">
+          <span class="headline-var">C</span>
+          <span class="headline-type">Reframe, Straight</span>
+        </div>
+        <div class="headline-text">Your ROAS Didn't Decline. Your Creative Stopped Earning It.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Design Elements</div>
+      <div class="element-row">
+        <div class="element-label">Subheading</div>
+        <div class="element-value">"GrowthPod. Performance creative for brands ready to scale."</div>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th class="attr-header">Attribute</th>
+            <th class="them-header them-header-stack">Them</th>
+            <th class="us-header us-header-stack">GrowthPod</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="attr-cell">Creative Direction</td>
+            <td class="them-cell">Stock photo + headline</td>
+            <td class="us-cell">Concept-driven strategy</td>
+          </tr>
+          <tr>
+            <td class="attr-cell">Copywriting</td>
+            <td class="them-cell">AI-generated filler</td>
+            <td class="us-cell">Customer language that converts</td>
+          </tr>
+          <tr>
+            <td class="attr-cell">Creative Lifespan</td>
+            <td class="them-cell">Fatigues in days</td>
+            <td class="us-cell">Built to scale for weeks</td>
+          </tr>
+          <tr>
+            <td class="attr-cell">Results</td>
+            <td class="them-cell">Declining ROAS</td>
+            <td class="us-cell">Profitable, repeatable growth</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="element-row">
+        <div class="element-label">CTA</div>
+        <div class="element-value"><span class="cta-display">Book a Call</span></div>
+      </div>
+
+      <div class="scoring-strip">
+        <span class="score-chip"><span class="dim">Persona</span>90</span>
+        <span class="score-chip"><span class="dim">Awareness</span>92</span>
+        <span class="score-chip"><span class="dim">Angle</span>93</span>
+        <span class="score-chip"><span class="dim">Selves</span>91</span>
+        <span class="score-chip"><span class="dim">Compliance</span>92</span>
+        <span class="score-chip"><span class="dim">Format</span>91</span>
+        <span class="score-chip"><span class="dim">Editor</span>95</span>
+      </div>
+    </div>
+
+    <!-- MEDIA BUYING -->
+    <div class="section-divider"><span>Media Buying</span></div>
+
+    <div class="section">
+      <div class="section-label">Primary Text</div>
+      <div class="primary-text">
+        <p>Every DTC founder hits the same wall. ROAS is declining, CPAs are climbing, and the move is always the same: test new audiences, tweak the funnel, adjust the bid strategy.</p>
+        <p>But the ads haven't changed in months. Same stock photo. Same headline formula. Same layout your last agency handed you.</p>
+        <p>Your funnel isn't broken. Your targeting is fine. The creative is the bottleneck, and it has been for a while.</p>
+        <p>GrowthPod makes static ads built on real strategy, real customer language, and concepts designed to stop the scroll. Not another template. Not another stock photo.</p>
+        <p>See what performance creative actually looks like. Book a call.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ AD #3 ════════════════ -->
+  <div class="brief" id="brief-2">
+    <div class="brief-header">
+      <div class="slug">GrowthPod_UsOnly_03_T001</div>
+      <h2>Ad #3 &mdash; Us <em>Only</em></h2>
+      <span class="format-badge">Headline &middot; Typography-Dominant</span>
+    </div>
+
+    <!-- Mockup -->
+    <div class="section" style="display:flex;justify-content:center;padding:40px 28px;">
+      <div class="ad-mockup">
+        <div class="mockup-typo">
+          <div class="mockup-typo-headline">If Your Ads <em>Bore</em> You, They Bore Everyone.</div>
+          <div class="mockup-subhead" style="padding:0;">GrowthPod. Scroll-stopping creative that scales.</div>
+          <div class="mockup-typo-pills">
+            <span class="mockup-typo-pill">Concept-driven</span>
+            <span class="mockup-typo-pill">Customer language</span>
+            <span class="mockup-typo-pill">Built to scale</span>
+          </div>
+        </div>
+        <div class="mockup-cta">Book a Call</div>
+        <div class="mockup-logo">growthpod &#127793;</div>
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div class="section-divider"><span>Notes</span></div>
+
+    <div class="section">
+      <div class="section-label">References</div>
+      <div class="ref-group">
+        <div class="ref-cat">Layout</div>
+        <ul>
+          <li>Headline, Style C: Typography-Dominant
+            <ul>
+              <li>Words at scale are the visual, minimal or no imagery</li>
+              <li>Dark background with high-contrast typography</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="ref-group">
+        <div class="ref-cat">Material</div>
+        <ul>
+          <li>GrowthPod brand identity (growthpod.ca)
+            <ul>
+              <li>Near-black background, Space Grotesk headline, selective lime-green emphasis on one key word</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Image Direction</div>
+      <div class="image-direction">
+        <p><strong>Image to generate:</strong> Pure typographic composition on near-black. The headline rendered at maximum scale in Space Grotesk Bold, with one key word ("bore" or "scroll" depending on variation) in electric lime (#A6EE2B) while the rest is off-white (#F5F5F5).</p>
+        <div class="compliance">Compliance: No fabricated results or performance claims. The ad must stand as a creative execution demonstrating GrowthPod's quality, not making unverifiable promises.</div>
+      </div>
+    </div>
+
+    <!-- BRIEF -->
+    <div class="section-divider"><span>Brief</span></div>
+
+    <div class="section">
+      <div class="section-label">Headline Variations</div>
+      <div class="headline-card">
+        <div class="headline-meta">
+          <span class="headline-var">A</span>
+          <span class="headline-type">Conditional, Straight</span>
+        </div>
+        <div class="headline-text">If Your Ads Bore You, They Bore Everyone.</div>
+      </div>
+      <div class="headline-card">
+        <div class="headline-meta">
+          <span class="headline-var">B</span>
+          <span class="headline-type">Provocation, Straight</span>
+        </div>
+        <div class="headline-text">Scroll Past Your Own Ad. That's the Problem.</div>
+      </div>
+      <div class="headline-card">
+        <div class="headline-meta">
+          <span class="headline-var">C</span>
+          <span class="headline-type">Conditional, Straight</span>
+        </div>
+        <div class="headline-text">If You Wouldn't Screenshot It, Why Would They?</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Design Elements</div>
+      <div class="element-row">
+        <div class="element-label">Subheading</div>
+        <div class="element-value">"GrowthPod. Scroll-stopping creative that scales."</div>
+      </div>
+      <div class="element-row">
+        <div class="element-label">Feature pills</div>
+        <div class="element-value">
+          <div class="pills">
+            <span class="pill">Concept-driven</span>
+            <span class="pill">Customer language</span>
+            <span class="pill">Built to scale</span>
+          </div>
+        </div>
+      </div>
+      <div class="element-row">
+        <div class="element-label">CTA</div>
+        <div class="element-value"><span class="cta-display">Book a Call</span></div>
+      </div>
+
+      <div class="scoring-strip">
+        <span class="score-chip"><span class="dim">Persona</span>91</span>
+        <span class="score-chip"><span class="dim">Awareness</span>91</span>
+        <span class="score-chip"><span class="dim">Angle</span>92</span>
+        <span class="score-chip"><span class="dim">Selves</span>91</span>
+        <span class="score-chip"><span class="dim">Compliance</span>92</span>
+        <span class="score-chip"><span class="dim">Format</span>93</span>
+        <span class="score-chip"><span class="dim">Editor</span>95</span>
+      </div>
+    </div>
+
+    <!-- MEDIA BUYING -->
+    <div class="section-divider"><span>Media Buying</span></div>
+
+    <div class="section">
+      <div class="section-label">Primary Text</div>
+      <div class="primary-text">
+        <p>You already know the problem. You open Ads Manager, scroll through your creatives, and nothing stops you. If it doesn't stop you, it definitely doesn't stop your customers.</p>
+        <p>The fix isn't a new audience. It isn't a new landing page. It's creative that actually earns attention instead of blending into the feed.</p>
+        <p>GrowthPod builds static ads that look nothing like what everyone else is running. Bold concepts, unexpected visuals, copy pulled from how your customers actually describe the problem. The kind of work that makes people screenshot an ad instead of scrolling past it.</p>
+        <p>If your creative has plateaued, so has your growth. Book a call.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showBrief(index) {
+  document.querySelectorAll('.brief').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('brief-' + index).classList.add('active');
+  document.querySelectorAll('.nav-tab')[index].classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
